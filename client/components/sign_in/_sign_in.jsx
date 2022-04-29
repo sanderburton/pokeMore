@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router';
 import { AuthContext } from '../../utils/auth_context';
 import { Paper } from '../common/paper';
 import { Input } from '../common/input';
-import { Button } from '../common/button';
 
 export const SignIn = () => {
   const [, setAuthToken] = useContext(AuthContext);
@@ -44,13 +43,13 @@ export const SignIn = () => {
           <div>Password</div>
           <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <div className="flex flex-row justify-end mt-2">
-            <Button type="button" onClick={goToSignUp}>
+            <button type="button" onClick={goToSignUp}>
               Sign up
-            </Button>
+            </button>
             <div className="pl-2" />
-            <Button type="button" onClick={signIn}>
+            <button type="button" onClick={signIn}>
               Sign in
-            </Button>
+            </button>
           </div>
         </Paper>
       </div>

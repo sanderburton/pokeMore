@@ -4,7 +4,6 @@ import { AuthContext } from '../../utils/auth_context';
 import { ApiContext } from '../../utils/api_context';
 import { Paper } from '../common/paper';
 import { Input } from '../common/input';
-import { Button } from '../common/button';
 
 export const SignUp = () => {
   const [, setAuthToken] = useContext(AuthContext);
@@ -75,9 +74,9 @@ export const SignUp = () => {
             onChange={(e) => setPasswordConfirmation(e.target.value)}
           />
           <div className="flex flex-row justify-end mt-2">
-            <Button type="button" onClick={signUp}>
+            <button type="button" onClick={signUp}>
               Sign up
-            </Button>
+            </button>
           </div>
           <div className="flex">{errorMessage}</div>
         </Paper>
