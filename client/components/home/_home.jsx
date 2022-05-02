@@ -12,6 +12,12 @@ export const Home = () => {
     const res = await api.get('/users/me');
     setUser(res.user);
     setLoading(false);
+
+    const otherRes = await api.get('/types');
+    console.log(otherRes)
+
+    const anotherRes = await api.get('/cities');
+    console.log(anotherRes)
   }, []);
 
   if (loading) {

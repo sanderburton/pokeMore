@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { config } from './database/config';
 import { UsersModule } from './modules/users.module';
+import { ProfilesModule } from './modules/profiles.module';
 import { PingGateway } from './providers/gateways/ping.gateway';
 import { AuthGuard } from './providers/guards/auth.guard';
 import { RolesGuard } from './providers/guards/roles.guard';
@@ -11,14 +12,16 @@ import { JwtService } from './providers/services/jwt.service';
 import { RolesService } from './providers/services/roles.service';
 import { UsersService } from './providers/services/users.service';
 import { GuardUtil } from './providers/util/guard.util';
+import { TypesService } from './providers/services/types.service';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), UsersModule],
+  imports: [TypeOrmModule.forRoot(config), UsersModule, ProfilesModule],
   controllers: [AppController],
   providers: [
     PingGateway,
     UsersService,
     RolesService,
+    TypesService,
     JwtService,
     GuardUtil,
     { provide: APP_GUARD, useClass: AuthGuard }, // auth guard should come before roles guard
