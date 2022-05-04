@@ -22,14 +22,14 @@ export const Home = () => {
     const trainersRes = await api.get('/trainers');
     console.log(trainersRes);
 
-    const testProfile = await api.post('/profiles', {
-      gender: 'female',
-      likes: 'jock',
-      morals: 'righteous',
-      personality: 'smart',
-      physical: 'weak',
-    })
-    console.log(testProfile);
+    // const testProfile = await api.post('/profiles', {
+    //   gender: 'female',
+    //   likes: 'jock',
+    //   morals: 'righteous',
+    //   personality: 'smart',
+    //   physical: 'weak',
+    // })
+    // console.log(testProfile);
   }, []);
 
   if (loading) {
