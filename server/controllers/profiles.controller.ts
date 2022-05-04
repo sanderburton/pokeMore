@@ -24,7 +24,7 @@ export class ProfilesController {
         }
         return 'uknown';
     }
-    
+
   @Get('/profiles/:id')
   async find(@Param('id') id: number, @JwtBody() JwtBody: JwtBodyDto) {
     const profile = await this.profilesService.find(id);
@@ -44,15 +44,52 @@ export class ProfilesController {
 
     profile.badges = Math.floor(Math.random() * 9);
 
-    let possibleCities = await this.citiesSerivce.findByCriteria(body);
+    let criteria = {
+      personality: body.personality,
+      likes: body.likes,
+      morals: body.morals,
+      physical: body.physical
+    }
+
+    let possibleCities = await this.citiesSerivce.findByCriteria(criteria);
+    if(possibleCities.length === 0) {
+      let newPossibilities = [];
+      let subCriteria = {...criteria};
+      while(newPossibilities.length === 0) {
+        let key = Object.keys(subCriteria)[0];
+        delete subCriteria[key]
+        newPossibilities = await this.citiesSerivce.findByCriteria(subCriteria);
+      }
+      possibleCities = newPossibilities;
+    }
     console.log(possibleCities);
     profile.city = this.randomChoice(possibleCities);
     
-    let possibleTypes = await this.typesSerivice.findByCriteria(body);
+    let possibleTypes = await this.typesSerivice.findByCriteria(criteria);
+    if(possibleTypes.length === 0) {
+      let newPossibilities = [];
+      let subCriteria = {...criteria};
+      while(newPossibilities.length === 0) {
+        let key = Object.keys(subCriteria)[0];
+        delete subCriteria[key]
+        newPossibilities = await this.typesSerivice.findByCriteria(subCriteria);
+      }
+      possibleTypes = newPossibilities;
+    }
     console.log(possibleTypes);
     profile.type = this.randomChoice(possibleTypes);
     
-    let possibleTrainers = await this.trainersService.findByCriteria(body);
+    let possibleTrainers = await this.trainersService.findByCriteria(criteria);
+    if(possibleTrainers.length === 0) {
+      let newPossibilities = [];
+      let subCriteria = {...criteria};
+      while(newPossibilities.length === 0) {
+        let key = Object.keys(subCriteria)[0];
+        delete subCriteria[key]
+        newPossibilities = await this.trainersService.findByCriteria(subCriteria);
+      }
+      possibleTrainers = newPossibilities;
+    }
     console.log(possibleTrainers);
     profile.trainer = this.randomChoice(possibleTrainers);
 

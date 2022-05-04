@@ -23,11 +23,11 @@ export const Home = () => {
     console.log(trainersRes);
 
     // const testProfile = await api.post('/profiles', {
-    //   gender: 'male',
-    //   personality: 'smart',
-    //   likes: 'gamer',
+    //   gender: 'female',
+    //   likes: 'jock',
     //   morals: 'righteous',
-    //   physical: 'weak'
+    //   personality: 'smart',
+    //   physical: 'weak',
     // })
     // console.log(testProfile);
   }, []);
