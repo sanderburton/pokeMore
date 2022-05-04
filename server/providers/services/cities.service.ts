@@ -20,12 +20,7 @@ export class CitiesService {
 
   findByCriteria(criteria): Promise<City[]> {
     return this.citiesRespository.find({
-      where: {
-        personality: criteria.personality,
-        likes: criteria.likes,
-        morals: criteria.morals,
-        physical: criteria.physical
-      }
+      where: criteria
     })
   }
 

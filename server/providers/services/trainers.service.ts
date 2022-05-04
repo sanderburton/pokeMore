@@ -20,12 +20,7 @@ export class TrainersService {
 
   findByCriteria(criteria): Promise<Trainer[]> {
     return this.trainersRepository.find({
-      where: {
-        personality: criteria.personality,
-        likes: criteria.likes,
-        morals: criteria.morals,
-        physical: criteria.physical
-      }
+      where: criteria
     })
   }
 
