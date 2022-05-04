@@ -13,6 +13,8 @@ import { RolesService } from './providers/services/roles.service';
 import { UsersService } from './providers/services/users.service';
 import { GuardUtil } from './providers/util/guard.util';
 import { TypesService } from './providers/services/types.service';
+import { TrainersService } from './providers/services/trainers.service';
+import { CitiesService } from './providers/services/cities.service';
 
 @Module({
   imports: [TypeOrmModule.forRoot(config), UsersModule, ProfilesModule],
@@ -22,6 +24,8 @@ import { TypesService } from './providers/services/types.service';
     UsersService,
     RolesService,
     TypesService,
+    TrainersService,
+    CitiesService,
     JwtService,
     GuardUtil,
     { provide: APP_GUARD, useClass: AuthGuard }, // auth guard should come before roles guard

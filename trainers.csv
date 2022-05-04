@@ -1,0 +1,58 @@
+slug,name,personality,likes,morals,physical,gender
+aroma-lady,Aroma Lady,smart,gamer,righteous,weak,female
+beauty,Beauty,courageous,jock,righteous,strong,female
+biker,Biker,courageous,jock,evil,strong,male
+bird-keeper,Bird Keeper,smart,gamer,righteous,weak,null
+black-belt,Black Belt,courageous,jock,righteous,strong,male
+bug-catcher,Bug Catcher,smart,gamer,evil,weak,null
+burglar,Burglar ,smart,gamer,evil,strong,male
+camper,Camper,courageous,gamer,righteous,weak,null
+champion-blue,Blue,smart,jock,evil,strong,male
+cooltrainer-female,Cool Trainer,courageous,jock,evil,strong,female
+cooltrainer-male,Cool Trainer,courageous,jock,evil,strong,male
+crush-girl,Crush Girl,smart,jock,righteous,weak,female
+cue-ball,Cue Ball,courageous,gamer,evil,strong,male
+elite-four-agatha,Agatha,smart,jock,righteous,strong,female
+elite-four-bruno,Bruno,courageous,jock,righteous,strong,male
+elite-four-lance,Lance,courageous,gamer,righteous,strong,male
+elite-four-lorelei,Lorelei,smart,gamer,evil,strong,female
+engineer,Engineer,smart,gamer,righteous,weak,male
+fisherman,Fisherman,smart,jock,righteous,weak,male
+gamer,Gamer,smart,gamer,evil,weak,male
+gentleman,Gentleman,smart,gamer,righteous,weak,male
+hero-female,Hero,courageous,jock,righteous,strong,female
+hero-male,Hero,courageous,jock,righteous,strong,male
+hiker,Hiker,courageous,jock,righteous,strong,male
+juggler,Juggler,smart,gamer,evil,strong,null
+lady,Lady,smart,gamer,righteous,weak,female
+lass,Lass,courageous,gamer,righteous,weak,female
+leader-blaine,Blaine,courageous,gamer,evil,strong,male
+leader-brock,Brock,courageous,jock,righteous,weak,male
+leader-erika,Erika,smart,jock,righteous,strong,female
+leader-giovanni,Giovanni,smart,gamer,evil,strong,male
+leader-koga,Koga,smart,gamer,evil,strong,male
+leader-lt-surge,Lt Surge,courageous,jock,evil,strong,male
+leader-misty,Misty,courageous,jock,righteous,strong,female
+leader-sabrina,Sabrina,smart,gamer,righteous,strong,female
+painter,Painter,smart,gamer,righteous,weak,null
+picnicker,Picnicker,smart,jock,righteous,weak,female
+pokemanic,Pokemanic,smart,gamer,evil,weak,male
+pokemon-breeder,Pokemon Breeder,smart,jock,righteous,weak,female
+pokemon-ranger-female,Pokemon Ranger,courageous,jock,righteous,strong,female
+pokemon-ranger-male,Pokemon Ranger,courageous,jock,righteous,strong,male
+professor-oak,Oak,smart,gamer,righteous,strong,male
+psychic-female,Psychic,smart,gamer,evil,strong,female
+psychic-male,Psychic,smart,gamer,evil,strong,male
+rocker,Rocker,courageous,gamer,evil,weak,male
+ruin-maniac,Ruin Maniac,courageous,gamer,evil,weak,male
+sailor,Sailor,courageous,jock,righteous,strong,male
+scientist,Scientist,courageous,gamer,evil,weak,male
+super-nerd,Super Nerd,smart,gamer,evil,strong,male
+swimmer-female,Swimmer,courageous,jock,righteous,weak,female
+swimmer-male,Swimmer,courageous,jock,righteous,weak,male
+tamer,Tamer,smart,gamer,righteous,weak,null
+team-rocket-grunt-female,Rocket Grunt,smart,jock,evil,weak,female
+team-rocket-grunt-male,Rocket Grunt,smart,jock,evil,weak,male
+tuber-male,Tuber,smart,gamer,righteous,weak,male
+tuber-female,Tuber,smart,gamer,righteous,weak,female
+youngster,Youngster,courageous,jock,righteous,weak,male

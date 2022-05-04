@@ -13,11 +13,14 @@ export const Home = () => {
     setUser(res.user);
     setLoading(false);
 
-    const otherRes = await api.get('/types');
-    console.log(otherRes)
+    const typesRes = await api.get('/types');
+    console.log(typesRes)
 
-    const anotherRes = await api.get('/cities');
-    console.log(anotherRes)
+    const citiesRes = await api.get('/cities');
+    console.log(citiesRes)
+
+    const trainersRes = await api.get('/trainers');
+    console.log(trainersRes);
   }, []);
 
   if (loading) {

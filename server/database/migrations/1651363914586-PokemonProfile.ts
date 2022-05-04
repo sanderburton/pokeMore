@@ -33,7 +33,7 @@ export class PokemonProfile1651363914586 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'physique',
+            name: 'physical',
             type: 'text',
             isNullable: false,
           },
@@ -72,10 +72,61 @@ export class PokemonProfile1651363914586 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'physique',
+            name: 'physical',
             type: 'text',
             isNullable: false,
           },
+        ],
+      }),
+    );
+
+
+    await queryRunner.createTable(
+      new Table({
+        name: 'trainer',
+        columns: [
+          {
+            name: 'id',
+            type: 'int',
+            isPrimary: true,
+            isGenerated: true,
+          },
+          {
+            name: 'slug',
+            type: 'text',
+            isNullable: false,
+            isUnique: true,
+          },
+          {
+            name: 'name',
+            type: 'text',
+            isNullable: false,
+          },
+          {
+            name: 'personality',
+            type: 'text',
+            isNullable: false,
+          },
+          {
+            name: 'likes',
+            type: 'text',
+            isNullable: false,
+          },
+          {
+            name: 'morals',
+            type: 'text',
+            isNullable: false,
+          },
+          {
+            name: 'physical',
+            type: 'text',
+            isNullable: false,
+          },
+          {
+            name: 'gender', 
+            type: 'text',
+            isNullable: true
+          }
         ],
       }),
     );

@@ -18,5 +18,5 @@ export class City {
   morals: string;
 
   @Column({ nullable: false })
-  physique: string;
+  physical: string;
 }
