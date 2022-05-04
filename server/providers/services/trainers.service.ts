@@ -1,0 +1,35 @@
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Trainer } from 'server/entities/trainer.entity';
+
+@Injectable()
+export class TrainersService {
+  constructor(
+    @InjectRepository(Trainer)
+    private trainersRepository: Repository<Trainer>,
+  ) {}
+
+  find(id: number, relations: string[] = []) {
+    return this.trainersRepository.findOne(id, { relations });
+  }
+
+  findAll() {
+    return this.trainersRepository.find();
+  }
+
+  findByCriteria(criteria): Promise<Trainer[]> {
+    return this.trainersRepository.find({
+      where: {
+        personality: criteria.personality,
+        likes: criteria.likes,
+        morals: criteria.morals,
+        physical: criteria.physical
+      }
+    })
+  }
+
+  create(city: Trainer) {
+    return this.trainersRepository.save(city);
+  }
+}

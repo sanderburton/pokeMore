@@ -12,6 +12,24 @@ export const Home = () => {
     const res = await api.get('/users/me');
     setUser(res.user);
     setLoading(false);
+
+    const typesRes = await api.get('/types');
+    console.log(typesRes)
+
+    const citiesRes = await api.get('/cities');
+    console.log(citiesRes)
+
+    const trainersRes = await api.get('/trainers');
+    console.log(trainersRes);
+
+    // const testProfile = await api.post('/profiles', {
+    //   gender: 'male',
+    //   personality: 'smart',
+    //   likes: 'gamer',
+    //   morals: 'righteous',
+    //   physical: 'weak'
+    // })
+    // console.log(testProfile);
   }, []);
 
   if (loading) {
