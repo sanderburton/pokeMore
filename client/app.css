@@ -47,12 +47,16 @@ button:hover {
   margin-right: 2rem;
 }
 
+.logo {
+  margin-right: 60rem;
+}
+
 .navbutton {
   background-color: indianred;
   /* vertical | horizontal */
   padding: 0.5rem 0.5rem;
   border-radius: 0rem;
-  align-self: flex-start;
+  align-self: unset;
 }
 
 .navbar {
@@ -96,3 +100,69 @@ button:hover {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+
+.error {
+  color: indianred;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 0.5rem 1rem;
+  background-color: rgba(169, 169, 169, 0.95);
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  border-color: indianred;
+  border-width: 0.1rem;
+}
+
+
+.pokemon-sprite {
+  image-rendering: pixelated;
+  width:20rem;
+}
+
+.trainer-sprite {
+  image-rendering: pixelated;
+  height:20rem;
+}
+
+.homepage {
+  justify-content: space-evenly;
+}
+
+.centered-column {
+  align-items: center;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.results-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.big-and-important {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.take-quiz-button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+}
+
+.take-quiz-margin {
+  margin-top: 8rem;
+}
+
+.previous-results {
+  margin-top: 2rem;
+}
+
+.sprites-container {
+  align-items: center;
+}
+
+

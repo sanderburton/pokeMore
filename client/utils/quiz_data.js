@@ -1,17 +1,21 @@
 export const categories = {
-  personality: { name: 'Personality', courageous: 'Courageous', smart: 'Smart' },
-  likes: { name: 'Likes', jock: 'Jock', gamer: 'Gamer' },
-  morals: { name: 'Morals', evil: 'Evil', righteous: 'Righteous' },
-  physical: { name: 'Physical', strong: 'Strong', weak: 'Weak' },
+  gender: { name: 'gender', boy: 'male', girl: 'female' },
+  personality: { name: 'personality', courageous: 'courageous', smart: 'smart' },
+  likes: { name: 'likes', jock: 'jock', gamer: 'gamer' },
+  morals: { name: 'morals', evil: 'evil', righteous: 'righteous' },
+  physical: { name: 'physical', strong: 'strong', weak: 'weak' },
 };
 
-const { personality, likes, morals, physical } = categories;
+const { gender, personality, likes, morals, physical } = categories;
 
 export const questions = [
   {
-    category: null,
+    category: gender.name,
     prompt: 'Are you a boy or a girl?',
-    options: [{ text: 'boy' }, { text: 'girl' }],
+    options: [
+      { text: 'boy', result: gender.boy },
+      { text: 'girl', result: gender.girl },
+    ],
   },
   {
     category: null,
