@@ -32,9 +32,9 @@ export class ProfilesController {
   }
 
   @Get('/profiles')
-  async findAll() {
-      // change this to just return the ones that are tied to the user requesting
-    const profiles = await this.profilesService.findAll();
+  async findAll(@JwtBody() JwtBody: JwtBodyDto) {
+    let user = await this.usersService.find(JwtBody.userId);
+    const profiles = await this.profilesService.findAll(user);
     return { profiles };
   }
 

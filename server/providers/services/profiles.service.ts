@@ -10,13 +10,21 @@ export class ProfilesSerivce {
     private pokemonProfileRepository: Repository<PokemonProfile>,
   ) {}
 
-  find(id: number, relations: string[] = []) {
+  find(id: number, relations: string[] = ['type', 'city', 'trainer', 'user']) {
     return this.pokemonProfileRepository.findOne(id, { relations });
   }
 
-  findAll() {
-      // change this to just get the ones tied to the user!
-    return this.pokemonProfileRepository.find();
+  findAll(user = null, relations: string[] = ['type', 'city', 'trainer', 'user']) {
+    if(user) {
+      return this.pokemonProfileRepository.find({
+        where: {
+          user: user
+        },
+        relations: relations
+      })
+    } else {
+      return this.pokemonProfileRepository.find({relations});
+    }
   }
 
   create(profile: PokemonProfile) {
