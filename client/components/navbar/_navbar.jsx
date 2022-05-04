@@ -19,6 +19,7 @@ export const Navbar = ({ user }) => {
 
   return (
     <div className="flex row navbar">
+      <h1 className="logo">PokeMore</h1>
       <h1 className="navitem">Welcome {user.firstName}</h1>
       <button type="button" className="navbutton" onClick={logout}>
         Logout

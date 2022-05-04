@@ -10,7 +10,6 @@ export const Profile = ({ pokemonProfile }) => {
   useEffect(async () => {
     const res = await api.get('/users/me');
     setUser(res.user);
-    console.log(pokemonProfile);
     const pokeRes = await api.get(pokemonProfile.pokemon);
     setPokemon(pokeRes);
     setLoading(false);
@@ -21,10 +20,15 @@ export const Profile = ({ pokemonProfile }) => {
   }
 
   return (
-    <div className="flex column">
-      <div className="flex column">
-        <img className="pokemon-sprite" src={pokemon.sprites.front_default}></img>
+    <div className="flex column centered-column">
+      <h1 className="results-label">{`${pokemonProfile.trainer.name} ${user.firstName}`}</h1>
+      <h1 className="results-label">{`From ${pokemonProfile.city.name}`}</h1>
+      <h1 className="results-label">{`Trains ${pokemonProfile.type.name} type pokemon`}</h1>
+      <h1 className="results-label">{`Gym Badges: ${pokemonProfile.badges}`}</h1>
+      <h1 className="results-label">{`Starter Pokemon: ${pokemon.species.name}`}</h1>
+      <div className="flex row sprites-container">
         <img className="trainer-sprite" src={trainerImages[pokemonProfile.trainer.slug.replaceAll('-', '_')]}></img>
+        <img className="pokemon-sprite" src={pokemon.sprites.front_default}></img>
       </div>
     </div>
   );

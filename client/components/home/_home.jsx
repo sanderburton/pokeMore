@@ -10,6 +10,7 @@ export const Home = () => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [testProfile, setTestProfile] = useState(null);
+  const [profiles, setProfiles] = useState([]);
   useEffect(async () => {
     const res = await api.get('/users/me');
     setUser(res.user);
@@ -24,32 +25,54 @@ export const Home = () => {
     const trainersRes = await api.get('/trainers');
     console.log(trainersRes);
 
-    const profileRes = await api.post('/profiles', {
-      gender: 'male',
-      personality: 'smart',
-      likes: 'gamer',
-      morals: 'righteous',
-      physical: 'weak',
+    // const profileRes = await api.post('/profiles', {
+    //   gender: 'male',
+    //   personality: 'courageous',
+    //   likes: 'jock',
+    //   morals: 'righteous',
+    //   physical: 'weak',
+    // });
+    // console.log(profileRes);
+    // setTestProfile(profileRes.profile);
+
+    const profilesRes = await api.get('/profiles');
+    let filledProfiles = [];
+    // console.log(profilesRes);
+
+    profilesRes.profiles.forEach(async (profile) => {
+      let filledProfile = await api.get(`/profiles/${profile.id}`);
+      filledProfiles.push(filledProfile);
     });
-    console.log(profileRes);
-    setTestProfile(profileRes.profile);
+    // console.log(filledProfiles);
+    setProfiles(filledProfiles);
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; 
   }
 
   return (
     <div className="app flex column">
       <Navbar user={user} />
-      {testProfile && (
-        <>
-          <h1>Previous Results</h1>
-          <Profile pokemonProfile={testProfile}></Profile>
-        </>
-      )}
-      <h1>Which Pokemon trainer are you?</h1>
-      <button onClick={() => navigate('/quiz')}>Take the Quiz</button>
+      <div className="flex row homepage">
+        <div className="flex column centered-column">
+          <h1 className="big-and-important take-quiz-margin">Which Pokemon trainer are you?</h1>
+          <button className="self-center take-quiz-button" onClick={() => navigate('/quiz')}>
+            Take the Quiz
+          </button>
+        </div>
+
+        {profiles.length > 0 && (
+          <div className="flex column centered-column">
+            {profiles.map((profile, index) => (
+              <>
+                <h1 className="big-and-important previous-results">Previous Results</h1>
+                <Profile key={index} pokemonProfile={profile}></Profile>
+              </>
+            ))}
+          </div>
+        )} 
+      </div>
     </div>
   );
 };

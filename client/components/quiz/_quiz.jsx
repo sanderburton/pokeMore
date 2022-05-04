@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import { ApiContext } from '../../utils/api_context';
 import { Navbar } from '../navbar/_navbar';
 import { Question } from './_question';
@@ -6,6 +7,7 @@ import { questions } from '../../utils/quiz_data';
 
 export const Quiz = () => {
   const api = useContext(ApiContext);
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,7 +39,6 @@ export const Quiz = () => {
       const selectedAnswer = document.querySelector(`label[for="${checkedButton.id}"]`).textContent;
       question.options.forEach((option) => {
         if (option.text === selectedAnswer) {
-          console.log(selectedAnswer);
           if (createProfileDto[question.category] && createProfileDto[question.category] !== option.result) {
             // the two answers are different categories, pick a random number either 0 or 1;
             const randomInt = Math.floor(Math.random() * 2);
@@ -51,7 +52,6 @@ export const Quiz = () => {
       });
     });
 
-    console.log(createProfileDto);
     return createProfileDto;
   };
 
@@ -59,6 +59,7 @@ export const Quiz = () => {
     const createProfileDto = readQuizIntoDto(event);
     const newProfile = await api.post('/profiles', createProfileDto);
     console.log(newProfile);
+    navigate('/');
   };
 
   if (loading) {

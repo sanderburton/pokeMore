@@ -47,12 +47,16 @@ button:hover {
   margin-right: 2rem;
 }
 
+.logo {
+  margin-right: 60rem;
+}
+
 .navbutton {
   background-color: indianred;
   /* vertical | horizontal */
   padding: 0.5rem 0.5rem;
   border-radius: 0rem;
-  align-self: flex-start;
+  align-self: unset;
 }
 
 .navbar {
@@ -117,5 +121,48 @@ button:hover {
 
 .trainer-sprite {
   image-rendering: pixelated;
-  width:10rem;
+  height:20rem;
 }
+
+.homepage {
+  justify-content: space-evenly;
+}
+
+.centered-column {
+  align-items: center;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.results-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.big-and-important {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.take-quiz-button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+}
+
+.take-quiz-margin {
+  margin-top: 8rem;
+}
+
+.previous-results {
+  margin-top: 2rem;
+}
+
+.sprites-container {
+  align-items: center;
+}
+
+
