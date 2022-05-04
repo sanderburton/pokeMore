@@ -7,6 +7,7 @@ import {
   import { Type } from './type.entity';
   import { City } from './city.entity';
   import { User } from './user.entity';
+import { Trainer } from './trainer.entity';
   
   @Entity()
   export class PokemonProfile {
@@ -18,6 +19,9 @@ import {
   
     @ManyToOne(() => City, {nullable: false})
     city: City;
+
+    @ManyToOne(() => Trainer, {nullable: false})
+    trainer: Trainer;
 
     @Column({nullable: false})
     pokemon: string;

@@ -18,6 +18,17 @@ export class TypesService {
     return this.typesRepository.findOne(id, { relations });
   }
 
+  findByCriteria(criteria): Promise<Type[]> {
+    return this.typesRepository.find({
+      where: {
+        personality: criteria.personality,
+        likes: criteria.likes,
+        morals: criteria.morals,
+        physical: criteria.physical
+      }
+    })
+  }
+
   create(type: Type) {
     return this.typesRepository.save(type);
   }

@@ -142,11 +142,6 @@ export class PokemonProfile1651363914586 implements MigrationInterface {
             isGenerated: true,
           },
           {
-            name: 'date',
-            type: 'text',
-            isNullable: false,
-          },
-          {
             name: 'typeId',
             type: 'int',
             isNullable: false,
@@ -157,13 +152,23 @@ export class PokemonProfile1651363914586 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'starter',
-            type: 'text',
+            name: 'trainerId',
+            type: 'int',
+            isNullable: false,
+          },
+          {
+            name: 'userId',
+            type: 'int',
             isNullable: false,
           },
           {
             name: 'badges',
             type: 'int',
+            isNullable: false,
+          },
+          {
+            name: 'pokemon',
+            type: 'text',
             isNullable: false,
           },
         ],

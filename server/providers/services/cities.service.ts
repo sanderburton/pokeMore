@@ -18,6 +18,17 @@ export class CitiesService {
     return this.citiesRespository.find();
   }
 
+  findByCriteria(criteria): Promise<City[]> {
+    return this.citiesRespository.find({
+      where: {
+        personality: criteria.personality,
+        likes: criteria.likes,
+        morals: criteria.morals,
+        physical: criteria.physical
+      }
+    })
+  }
+
   create(city: City) {
     return this.citiesRespository.save(city);
   }

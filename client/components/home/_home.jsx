@@ -21,6 +21,15 @@ export const Home = () => {
 
     const trainersRes = await api.get('/trainers');
     console.log(trainersRes);
+
+    // const testProfile = await api.post('/profiles', {
+    //   gender: 'male',
+    //   personality: 'smart',
+    //   likes: 'gamer',
+    //   morals: 'righteous',
+    //   physical: 'weak'
+    // })
+    // console.log(testProfile);
   }, []);
 
   if (loading) {
