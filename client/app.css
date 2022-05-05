@@ -165,4 +165,8 @@ button:hover {
   align-items: center;
 }
 
-
+.profile {
+  background-color: darkgrey;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}

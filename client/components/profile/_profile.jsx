@@ -10,11 +10,11 @@ export const Profile = ({ pokemonProfile }) => {
   useEffect(async () => {
     const res = await api.get('/users/me');
     setUser(res.user);
-    if(pokemonProfile.pokemon != 'uknown') {
+    if (pokemonProfile.pokemon != 'uknown') {
       const pokeRes = await api.get(pokemonProfile.pokemon);
       setPokemon(pokeRes);
     } else {
-      setPokemon('unknown')
+      setPokemon('unknown');
     }
     setLoading(false);
   }, []);
@@ -24,8 +24,8 @@ export const Profile = ({ pokemonProfile }) => {
   }
 
   return (
-    <div className="flex column centered-column">
-      <h1 className="results-label">{`${pokemonProfile.trainer.name} ${user.firstName}`}</h1>
+    <div className="flex column centered-column profile">
+      <h1 className="results-label">{`${pokemonProfile.trainer.name}`}</h1>
       <h1 className="results-label">{`From ${pokemonProfile.city.name}`}</h1>
       <h1 className="results-label">{`Trains ${pokemonProfile.type.name} type pokemon`}</h1>
       <h1 className="results-label">{`Gym Badges: ${pokemonProfile.badges}`}</h1>

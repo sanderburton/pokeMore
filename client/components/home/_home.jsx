@@ -30,7 +30,7 @@ export const Home = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   return (
@@ -46,14 +46,12 @@ export const Home = () => {
 
         {profiles.length > 0 && (
           <div className="flex column centered-column">
+            <h1 className="big-and-important previous-results">Results</h1>
             {profiles.map((profile, index) => (
-              <>
-                <h1 className="big-and-important previous-results">Previous Results</h1>
-                <Profile key={index} pokemonProfile={profile}></Profile>
-              </>
+              <Profile key={index} pokemonProfile={profile}></Profile>
             ))}
           </div>
-        )} 
+        )}
       </div>
     </div>
   );
