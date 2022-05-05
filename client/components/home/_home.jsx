@@ -25,27 +25,7 @@ export const Home = () => {
     const trainersRes = await api.get('/trainers');
     console.log(trainersRes);
 
-    // const profile = await api.get('/profiles/5');
-    // console.log(profile)
-
-    // const profileRes = await api.post('/profiles', {
-    //   gender: 'male',
-    //   personality: 'courageous',
-    //   likes: 'jock',
-    //   morals: 'righteous',
-    //   physical: 'weak',
-    // });
-    // console.log(profileRes);
-    // setTestProfile(profileRes.profile);
-
     const profilesRes = await api.get('/profiles');
-    // let filledProfiles = [];
-    // console.log(profilesRes);
-    // profilesRes.profiles.forEach(async (profile) => {
-    //   let filledProfile = await api.get(`/profiles/${profile.id}`);
-    //   filledProfiles.push(filledProfile);
-    // });
-    // console.log(filledProfiles);
     setProfiles(profilesRes.profiles);
   }, []);
 
